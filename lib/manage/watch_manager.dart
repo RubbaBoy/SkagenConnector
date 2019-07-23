@@ -27,10 +27,10 @@ class WatchManager {
       _ioManager = IOManager();
       await _ioManager.init();
       [
-        connectManager = ConnectManager(),
-        buttonManager = ButtonManager(),
-        triggerManager = TriggerManager(),
-        actionManager = ActionManager()
+        connectManager = ConnectManager(this),
+        buttonManager = ButtonManager(this),
+        triggerManager = TriggerManager(this),
+        actionManager = ActionManager(this)
       ].forEach((manager) => manager.init(_ioManager.getManagerData(manager)));
 
       print('Initialized Watch manager');

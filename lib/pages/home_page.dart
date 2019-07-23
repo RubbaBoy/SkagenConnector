@@ -32,7 +32,8 @@ class HomePageState extends State<HomePage> {
 
   WatchManager watchManager;
   bool loading = true;
-  UADHeader uadHeader = UADHeader();
+  UADHManager uadhManager;
+  UADHeader uadHeader;
 
   _getDrawerItemWidget(int pos) {
     return [ConnectionFragment(this), SecondFragment(), ThirdFragment(), ThirdFragment(), new Text('Error')][pos];
@@ -79,6 +80,8 @@ class HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    uadhManager = UADHManager();
+    uadHeader = UADHeader(uadhManager);
     watchManager = WatchManager(this);
     watchManager.init().whenComplete(() {
       print('Finished initting! Removing loading icon!');

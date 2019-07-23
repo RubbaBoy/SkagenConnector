@@ -43,11 +43,7 @@ class ConnectionFragmentState extends State<ConnectionFragment> {
                       _connectManager.attach(device);
                       var deviceName = '${device.name} ';
                       if (deviceName.trim().isEmpty) deviceName = '';
-                      alert(
-                        context,
-                        'Attached to device',
-                        content: 'Attached to $deviceName${device.id.id}',
-                      );
+                      snackbar(context, 'Attached to $deviceName${device.id.id}');
                     },
                   );
                 },

@@ -53,3 +53,9 @@ void alert(BuildContext context, String title, {String content = null}) {
     },
   );
 }
+
+void snackbar(BuildContext context, String text) {
+  Scaffold.of(context).showSnackBar(SnackBar(
+    content: Text(text),
+  ));
+}

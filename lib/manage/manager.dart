@@ -1,4 +1,4 @@
 class Manager {
-  String getName() {}
+  String getName() => '';
   void init(Map<String, dynamic> json) {}
 }

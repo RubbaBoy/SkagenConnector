@@ -1,6 +1,11 @@
 import 'manager.dart';
+import 'watch_manager.dart';
 
 class TriggerManager implements Manager {
+
+  WatchManager _watchManager;
+
+  TriggerManager(this._watchManager);
 
   @override
   String getName() => "trigger";

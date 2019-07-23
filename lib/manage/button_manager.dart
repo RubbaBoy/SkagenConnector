@@ -1,6 +1,11 @@
 import 'manager.dart';
+import 'watch_manager.dart';
 
 class ButtonManager implements Manager {
+
+  WatchManager _watchManager;
+
+  ButtonManager(this._watchManager);
 
   @override
   String getName() => "button";
